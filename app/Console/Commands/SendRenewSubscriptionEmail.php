@@ -49,7 +49,13 @@ class SendRenewSubscriptionEmail extends Command
                         'initiated_date' => Carbon::now()->format('Y-m-d'),
                         'to_email_address' =>$user->email,
                     ]);
-                    \Mail::to($user->email)->send(new \App\Mail\FirstRenewableNotice($user->email,$user->next_renew_date));
+                    try{
+                        \Mail::to($user->first()->email)->send(new \App\Mail\FirstRenewableNotice($user->first()->email,$user->first()->next_renew_date));
+                        }
+                        catch(\throwable $ex) {
+                            logger('Error While adding new user.');
+                            report($ex);
+                        }
                     $updateUser->update(['first_renewable_notice_sent_date' => Carbon::now()->format('Y-m-d')]);
                     DB::table('email_logs')->where('user_id',$user->id)->update([
                         'is_send'=>true,
@@ -64,7 +70,13 @@ class SendRenewSubscriptionEmail extends Command
                         'initiated_date' => Carbon::now()->format('Y-m-d'),
                         'to_email_address' =>$user->email,
                     ]);
+                    try{
                     \Mail::to($user->email)->send(new \App\Mail\SecondRenewableNotice($user->email,$user->next_renew_date));
+                }
+                catch(\throwable $ex) {
+                    logger('Error While adding new user.');
+                    report($ex);
+                }
                     $updateUser->update(['second_renewable_notice_sent_date' => Carbon::now()->format('Y-m-d')]);
                     DB::table('email_logs')->where('user_id',$user->id)->update([
                         'is_send'=>true,
@@ -79,7 +91,13 @@ class SendRenewSubscriptionEmail extends Command
                         'initiated_date' => Carbon::now()->format('Y-m-d'),
                         'to_email_address' =>$user->email,
                     ]);
+                    try{
                     \Mail::to($user->email)->send(new \App\Mail\FinalRenewableNotice($user->email,$user->next_renew_date));
+                      }
+                    catch(\throwable $ex) {
+                        logger('Error While adding new user.');
+                        report($ex);
+                    }
                     $updateUser->update(['second_renewable_notice_sent_date' => Carbon::now()->format('Y-m-d')]);
                     DB::table('email_logs')->where('user_id',$user->id)->update([
                         'is_send'=>true,

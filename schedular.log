@@ -1,0 +1,147 @@
+
+   Illuminate\Contracts\Container\BindingResolutionException 
+
+  Target class [App\Console\Commands\SchedularController] does not exist.
+
+  at C:\Users\Acer\Desktop\GBHO-Scheduler\vendor\laravel\framework\src\Illuminate\Container\Container.php:877
+    873▕ 
+    874▕         try {
+    875▕             $reflector = new ReflectionClass($concrete);
+    876▕         } catch (ReflectionException $e) {
+  ➜ 877▕             throw new BindingResolutionException("Target class [$concrete] does not exist.", 0, $e);
+    878▕         }
+    879▕ 
+    880▕         // If the type is not instantiable, the developer is attempting to resolve
+    881▕         // an abstract type such as an Interface or Abstract Class and there is
+
+  1   C:\Users\Acer\Desktop\GBHO-Scheduler\vendor\laravel\framework\src\Illuminate\Container\Container.php:875
+      ReflectionException::("Class "App\Console\Commands\SchedularController" does not exist")
+
+  2   C:\Users\Acer\Desktop\GBHO-Scheduler\vendor\laravel\framework\src\Illuminate\Container\Container.php:875
+      ReflectionClass::__construct("App\Console\Commands\SchedularController")
+
+   Illuminate\Contracts\Container\BindingResolutionException 
+
+  Target class [App\Console\Commands\SchedularController] does not exist.
+
+  at C:\Users\Acer\Desktop\GBHO-Scheduler\vendor\laravel\framework\src\Illuminate\Container\Container.php:877
+    873▕ 
+    874▕         try {
+    875▕             $reflector = new ReflectionClass($concrete);
+    876▕         } catch (ReflectionException $e) {
+  ➜ 877▕             throw new BindingResolutionException("Target class [$concrete] does not exist.", 0, $e);
+    878▕         }
+    879▕ 
+    880▕         // If the type is not instantiable, the developer is attempting to resolve
+    881▕         // an abstract type such as an Interface or Abstract Class and there is
+
+  1   C:\Users\Acer\Desktop\GBHO-Scheduler\vendor\laravel\framework\src\Illuminate\Container\Container.php:875
+      ReflectionException::("Class "App\Console\Commands\SchedularController" does not exist")
+
+  2   C:\Users\Acer\Desktop\GBHO-Scheduler\vendor\laravel\framework\src\Illuminate\Container\Container.php:875
+      ReflectionClass::__construct("App\Console\Commands\SchedularController")
+
+   Illuminate\Contracts\Container\BindingResolutionException 
+
+  Target class [App\Console\Commands\SchedularController] does not exist.
+
+  at C:\Users\Acer\Desktop\GBHO-Scheduler\vendor\laravel\framework\src\Illuminate\Container\Container.php:877
+    873▕ 
+    874▕         try {
+    875▕             $reflector = new ReflectionClass($concrete);
+    876▕         } catch (ReflectionException $e) {
+  ➜ 877▕             throw new BindingResolutionException("Target class [$concrete] does not exist.", 0, $e);
+    878▕         }
+    879▕ 
+    880▕         // If the type is not instantiable, the developer is attempting to resolve
+    881▕         // an abstract type such as an Interface or Abstract Class and there is
+
+  1   C:\Users\Acer\Desktop\GBHO-Scheduler\vendor\laravel\framework\src\Illuminate\Container\Container.php:875
+      ReflectionException::("Class "App\Console\Commands\SchedularController" does not exist")
+
+  2   C:\Users\Acer\Desktop\GBHO-Scheduler\vendor\laravel\framework\src\Illuminate\Container\Container.php:875
+      ReflectionClass::__construct("App\Console\Commands\SchedularController")
+
+   Error 
+
+  Call to a member function withoutOverlapping() on null
+
+  at C:\Users\Acer\Desktop\GBHO-Scheduler\app\Console\Commands\MailSender.php:32
+     28▕      * @return int
+     29▕      */
+     30▕     public function handle(SchedularController $schedulartask)
+     31▕     {
+  ➜  32▕         $schedulartask->RunEverySecond()->withoutOverlapping();
+     33▕         sleep(10);
+     34▕         $schedulartask->RunEverySecond()->withoutOverlapping();
+     35▕ 
+     36▕         return Command::SUCCESS;
+
+  1   C:\Users\Acer\Desktop\GBHO-Scheduler\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php:36
+      App\Console\Commands\MailSender::handle(Object(App\Http\Controllers\SchedularController))
+
+  2   C:\Users\Acer\Desktop\GBHO-Scheduler\vendor\laravel\framework\src\Illuminate\Container\Util.php:41
+      Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+
+   Error 
+
+  Call to a member function withoutOverlapping() on null
+
+  at C:\Users\Acer\Desktop\GBHO-Scheduler\app\Console\Commands\MailSender.php:32
+     28▕      * @return int
+     29▕      */
+     30▕     public function handle(SchedularController $schedulartask)
+     31▕     {
+  ➜  32▕         $schedulartask->RunEverySecond()->withoutOverlapping();
+     33▕         sleep(10);
+     34▕         $schedulartask->RunEverySecond()->withoutOverlapping();
+     35▕         sleep(10);
+     36▕         $schedulartask->RunEverySecond()->withoutOverlapping();
+
+  1   C:\Users\Acer\Desktop\GBHO-Scheduler\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php:36
+      App\Console\Commands\MailSender::handle(Object(App\Http\Controllers\SchedularController))
+
+  2   C:\Users\Acer\Desktop\GBHO-Scheduler\vendor\laravel\framework\src\Illuminate\Container\Util.php:41
+      Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+
+   Error 
+
+  Call to a member function withoutOverlapping() on null
+
+  at C:\Users\Acer\Desktop\GBHO-Scheduler\app\Console\Commands\MailSender.php:40
+     36▕         $schedulartask->RunEverySecond();
+     37▕         sleep(10);
+     38▕         $schedulartask->RunEverySecond();
+     39▕         sleep(10);
+  ➜  40▕         $schedulartask->RunEverySecond();
+     41▕         sleep(10);
+     42▕         $schedulartask->RunEverySecond();
+     43▕ 
+     44▕         return Command::SUCCESS;
+
+  1   C:\Users\Acer\Desktop\GBHO-Scheduler\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php:36
+      App\Console\Commands\MailSender::handle(Object(App\Http\Controllers\SchedularController))
+
+  2   C:\Users\Acer\Desktop\GBHO-Scheduler\vendor\laravel\framework\src\Illuminate\Container\Util.php:41
+      Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+
+   ParseError 
+
+  syntax error, unexpected token "catch"
+
+  at C:\Users\Acer\Desktop\GBHO-Scheduler\app\Http\Controllers\SchedularController.php:20
+     16▕             if($mail->send_date == null){
+     17▕                 $user = DB::table('users')->where('id',$mail->user_id);
+     18▕                 try{
+     19▕                 \Mail::to($user->first()->email)->send(new \App\Mail\FinalRenewableNotice($user->first()->email,$user->first()->next_renew_date));
+  ➜  20▕                 catch(\throwable $ex) {
+     21▕                 }
+     22▕                 $user->update(['second_renewable_notice_sent_date' => Carbon::now()->format('Y-m-d')]);
+     23▕ 
+     24▕                 DB::table('email_logs')->where('user_id',$user->first()->id)->update([
+
+  1   C:\Users\Acer\Desktop\GBHO-Scheduler\vendor\composer\ClassLoader.php:428
+      Composer\Autoload\includeFile("C:\Users\Acer\Desktop\GBHO-Scheduler\vendor\composer/../../app\Http\Controllers\SchedularController.php")
+
+  2   [internal]:0
+      Composer\Autoload\ClassLoader::loadClass("App\Http\Controllers\SchedularController")

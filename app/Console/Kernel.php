@@ -19,8 +19,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('reminder:email')->daily()->timezone('Asia/Kathmandu')->appendOutputTo('schedular.log');
-        $schedule->command('check:mail')->everyMinute()->timezone('Asia/Kathmandu')->appendOutputTo('schedular.log');
+        $schedule->command('reminder:email')->daily()->timezone('Asia/Kathmandu')->appendOutputTo('schedular.log')->withoutOverlapping();        ;
+        $schedule->command('check:mail')->everyMinute()->timezone('Asia/Kathmandu')->appendOutputTo('schedular.log')->withoutOverlapping();
     }
 
     /**
