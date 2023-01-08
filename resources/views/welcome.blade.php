@@ -17,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-        @foreach ($users = DB::table('email_logs')->where('is_send',0)->get(); as $user)
+        @foreach ($users = DB::table('email_logs')->get(); as $user)
       <tr>
         <td>{{ $loop->iteration }}</td>
           <td>{{ $user->to_email_address }}</td>
@@ -29,28 +29,3 @@
 
     </tbody>
   </table>
-  <h1>Email logs</h1>
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-          <th scope="col">Scheduler Name</th>
-        <th scope="col">last_started_at</th>
-        <th scope="col">last_finished_at</th>
-        <th scope="col">last_skipped_at</th>
-      </tr>
-    </thead>
-    <tbody>
-        @foreach ($moniters = DB::table('monitored_scheduled_tasks')->select('*')->get(); as $monitor)
-      <tr>
-        <td>{{ $loop->iteration }}</td>
-          <td>{{ $monitor->name }}</td>
-        <td>{{ $monitor->last_started_at }}</td>
-        <td>{{ $monitor->last_finished_at  }}</td>
-        <td>{{ $monitor->last_skipped_at }}</td>
-      </tr>
-@endforeach
-
-    </tbody>
-  </table>
-

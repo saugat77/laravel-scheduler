@@ -145,3 +145,4 @@
 
   2   [internal]:0
       Composer\Autoload\ClassLoader::loadClass("App\Http\Controllers\SchedularController")
+^C
